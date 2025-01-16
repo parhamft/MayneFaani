@@ -1,0 +1,32 @@
+﻿@using Domain.Core.App.Opperators.Entity;
+@model List<UserCar>;
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<div class="container">
+    <h2 class="text-center mb-4">Add Car</h2>
+    <form method="post" asp-action="LoggedInRequest" asp-controller="Request">
+
+        <div class="form-group col-md-4">
+            <label for="inputState">Car</label>
+            <select name="Car" id="inputState" class="form-control">
+                @foreach (var car in @Model)
+                {
+                    <option value="@car.Id" selected>@car.Plate</option>
+                }
+
+
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+</div>

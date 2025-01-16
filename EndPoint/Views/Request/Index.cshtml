@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-@TempData["AlertType"] alert-dismissible fade show" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<div class="container">
+    <h2 class="text-center mb-4">Register</h2>
+    <form method="post" asp-action="SendRequest" asp-controller="Request">
+        <div class="mb-3">
+
+            <label for="NationalCode" class="form-label">National Code</label>
+            <input type="text" class="form-control" name="NationalCode" id="NationalCode" placeholder="Enter your National Code" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter your phoneNumber" required>
+        </div>
+        <div class="mb-3">
+            <label for="Address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="Address" name="Address" placeholder="Enter your Address" required>
+        </div>
+        <div class="mb-3">
+
+            <label for="Plate" class="form-label">Plate</label>
+            <input type="text" class="form-control" name="Plate" id="Plate" placeholder="Enter your Plate" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Car</label>
+            <select name="Car" id="inputState" class="form-control">
+                @foreach (var car in @Model)
+                {
+                    <option value="@car.Id" selected>@car.Model</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Send</button>
+    </form>
+</div>
