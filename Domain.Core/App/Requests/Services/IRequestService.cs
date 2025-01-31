@@ -1,6 +1,7 @@
 ﻿using Domain.Core.App.Requests.Data;
 using Domain.Core.App.Requests.Entity;
 using Domain.Core.App.UserCars.Data;
+using Domain.Core.App.Users.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Domain.Core.App.Requests.Services
         public List<Request> GetPendingRequests();
         public bool CheckingTheCar(Request request);
         public bool AddRequest(Request request);
+        public List<Request> GetPastRequests(User user);
         public bool DeleteRequest(int id);
         public Request GetById(int id);
         public bool CheckingTheDate(Request request);

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="App\Cars\Dto\" />
-    <Folder Include="App\RequestLogs\AppServices\" />
     <Folder Include="App\RequestLogs\Dto\" />
     <Folder Include="App\RequestLogs\Enums\" />
     <Folder Include="App\Requests\Dto\" />

@@ -17,6 +17,7 @@ namespace AppService.App.Cars
         {
             _carService = carService;
         }
+        
         public List<Car> GetAllCars()
         {
             return _carService.GetAllCars();
@@ -25,6 +26,17 @@ namespace AppService.App.Cars
         {
             return _carService.GetCarsById(id);
         }
-
+        public bool AddCar(Car car)
+        {
+            return _carService.AddCar(car);
+        }
+        public bool Delete(int id)
+        {
+            return _carService.Delete(id);
+        }
+        public bool Update(Car car)
+        {
+            return _carService.Update(car);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Domain.Core.App.Users.Enums;
 using Infra.DataBase;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace EndPoint.Controllers
 {
@@ -22,17 +23,41 @@ namespace EndPoint.Controllers
             return Redirect("/user");
 
         }
-
+        [HttpGet]
         public IActionResult Approve(int id)
         {
-            requestAppService.ApproveRequests(id);
-            return RedirectToAction("Index");
+            try
+            {
+                TempData["Message"] = requestAppService.ApproveRequests(id);
+                TempData["AlertType"] = "success";
+                return RedirectToAction("Index");
+            }
+
+            catch (Exception ex)
+            {
+                TempData["Message"] = ex.Message;
+                TempData["AlertType"] = "danger";
+                return View("Index");
+            }
         }
 
         public IActionResult Disapprove(int id)
         {
-            requestAppService.Dissapprove(id);
-            return RedirectToAction("Index");
+            
+           
+            try
+            {
+                TempData["Message"] = requestAppService.Dissapprove(id);
+                TempData["AlertType"] = "success";
+                return RedirectToAction("Index");
+            }
+
+            catch (Exception ex)
+            {
+                TempData["Message"] = ex.Message;
+                TempData["AlertType"] = "danger";
+                return View("Index");
+            }
         }
         
             

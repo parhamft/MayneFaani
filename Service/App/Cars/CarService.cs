@@ -16,6 +16,7 @@ namespace Service.App.Cars
         {
             carRepository = repository;
         }
+
         public List<Car> GetAllCars()
         {
             return carRepository.GetAll();
@@ -23,6 +24,18 @@ namespace Service.App.Cars
         public Car GetCarsById(int id)
         {
             return carRepository.GetById(id);
+        }
+        public bool AddCar(Car car)
+        {
+            return carRepository.Add(car);
+        }
+        public bool Delete(int id)
+        {
+            return carRepository.Delete(id);
+        }
+        public bool Update(Car car)
+        {
+            return carRepository.Update(car);
         }
 
     }

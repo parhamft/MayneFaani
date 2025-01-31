@@ -39,6 +39,9 @@ namespace Infra.repo.App.Cars
         {
             var OldCar = _DBContext.Cars.FirstOrDefault(x=>x.Id==car.Id);
             OldCar.Model=car.Model;
+            OldCar.Company = car.Company;
+            OldCar.CreationYear = car.CreationYear;
+
             _DBContext.SaveChanges();
             return true;
         }

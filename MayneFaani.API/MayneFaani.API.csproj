@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.0.5" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AppService\AppService.csproj" />
+		<ProjectReference Include="..\Domain.Core\Domain.Core.csproj" />
+		<ProjectReference Include="..\Infra.DataBase\Infra.DataBase.csproj" />
+		<ProjectReference Include="..\Infra.repo\Infra.repo.csproj" />
+		<ProjectReference Include="..\Service\Service.csproj" />
+	</ItemGroup>
+
+</Project>

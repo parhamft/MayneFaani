@@ -4,6 +4,7 @@ using Domain.Core.App.Requests.Data;
 using Domain.Core.App.Requests.Entity;
 using Domain.Core.App.Requests.Services;
 using Domain.Core.App.UserCars.Data;
+using Domain.Core.App.Users.Entity;
 using Microsoft.Extensions.Configuration;
 using Service.App.RequestLogs;
 
@@ -42,6 +43,11 @@ namespace Service.App.Requests
                 throw new Exception("We Will No Longer Work On your Car");
             }
             return true;
+        }
+        public List<Request> GetPastRequests(User user)
+        {
+            return requestRepository.GetAllUsersCars(user);
+
         }
         public bool CheckingTheDate(Request request)
         {

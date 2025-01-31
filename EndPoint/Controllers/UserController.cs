@@ -56,5 +56,11 @@ namespace EndPoint.Controllers
                 return View("Index");
             }
         }
+
+        public IActionResult LogOut()
+        {
+            OnlineUser.CurrentUser=null;
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Domain.Core.App.Cars.AppServices;
+using Domain.Core.App.RequestLogs.AppServices;
 using Domain.Core.App.Requests.AppServices;
 using Domain.Core.App.Requests.Entity;
 using Domain.Core.App.Requests.Services;
@@ -14,15 +15,16 @@ namespace EndPoint.Controllers
         private readonly ICarAppService _carAppService;
         private readonly IRequestAppService requestAppService;
         private readonly IConfiguration Configuration;
-        private readonly IRequestService requestService;
+        private readonly IRequestLogAppService requestLogAppService;
         private readonly IUserCarAppService userCarAppServiceX;
 
-        public RequestController(IUserCarAppService userCarAppService, ICarAppService carApp, IRequestAppService requestApp, IUserCarAppService userCarAppService1)
+        public RequestController(IUserCarAppService userCarAppService, ICarAppService carApp, IRequestAppService requestApp,IRequestLogAppService requestLog, IUserCarAppService userCarAppService1)
         {
             carAppService = userCarAppService;
             _carAppService = carApp;
             requestAppService = requestApp;
             userCarAppServiceX = userCarAppService1;
+            requestLogAppService = requestLog;
         }
         public IActionResult Index()
         {
@@ -77,5 +79,24 @@ namespace EndPoint.Controllers
                 return RedirectToAction("LoggedInRequest");
             }
         }
+        public IActionResult PastRequests()
+        {
+            if (OnlineUser.CurrentUser == null)
+            {
+                return RedirectToAction("Index", "User");
+            }
+            var cars = requestAppService.GetPastRequests(OnlineUser.CurrentUser);
+            return View(cars);
+        }
+        public IActionResult DisapprovedRequests()
+        {
+            if (OnlineUser.CurrentUser == null)
+            {
+                return RedirectToAction("Index", "User");
+            }
+            var cars = requestLogAppService.GetAllDisapprovedRequests(OnlineUser.CurrentUser);
+            return View(cars);
+        }
+
     }
 }

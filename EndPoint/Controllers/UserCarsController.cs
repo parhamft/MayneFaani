@@ -1,9 +1,11 @@
-﻿using Domain.Core.App.Cars.AppServices;
+﻿using AppService.App.Requests;
+using Domain.Core.App.Cars.AppServices;
 using Domain.Core.App.UserCars.AppServices;
 using Domain.Core.App.Users.AppServices;
 using Infra.DataBase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Net;
 
 namespace EndPoint.Controllers
 {
@@ -25,12 +27,26 @@ namespace EndPoint.Controllers
             var cars= carAppService.GetAllCars();
             return View(cars);
         }
+        [HttpPost]
         public IActionResult AddCar(string Plate, int Car)
         {
-            var car = carAppService.GetCarsById(Car);
-            userCarAppService.AddUserCar(OnlineUser.CurrentUser, Plate, car);
-            return View("");
             
+           
+            
+            try
+            {
+                var car = carAppService.GetCarsById(Car);
+                userCarAppService.AddUserCar(OnlineUser.CurrentUser, Plate, car);
+                return RedirectToAction("Index");
+
+            }
+
+            catch (Exception ex)
+            {
+                TempData["Message"] = ex.Message;
+                TempData["AlertType"] = "danger";
+                return RedirectToAction("Index");
+            }
         }
 
     }

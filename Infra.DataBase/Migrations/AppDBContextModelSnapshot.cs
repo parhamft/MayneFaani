@@ -125,9 +125,6 @@ namespace Infra.DataBase.Migrations
                     b.Property<int>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("CreationYear")
-                        .HasColumnType("date");
-
                     b.Property<string>("NationalCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -1,10 +1,12 @@
 using AppService.App.Cars;
+using AppService.App.RequestLogs;
 using AppService.App.Requests;
 using AppService.App.UserCars;
 using AppService.App.Users;
 using Domain.Core.App.Cars.AppServices;
 using Domain.Core.App.Cars.Data;
 using Domain.Core.App.Cars.Services;
+using Domain.Core.App.RequestLogs.AppServices;
 using Domain.Core.App.RequestLogs.Data;
 using Domain.Core.App.RequestLogs.Services;
 using Domain.Core.App.Requests.AppServices;
@@ -36,23 +38,29 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //var ConnectionString = builder.Configuration.GetConnectionString("AppDB");
+//var connectionString = builder.Configuration.GetSection("ConnectionString").Value;
+
+
 builder.Services.AddDbContext<AppDBContext>();
+
 
 builder.Services.AddScoped<ICarRepository, CarRepositor>();
 builder.Services.AddScoped<IRequestLogsRepository,RequestLogsRepository>();
 builder.Services.AddScoped<IRequestRepository,RequestRepository>();
 builder.Services.AddScoped<IUserCarRepository,UserCarRepository>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
+
 builder.Services.AddScoped<IUserService,UserService>();
-builder.Services.AddScoped<IUserCarService,UserCarService>();
+builder.Services.AddScoped<IUserCarService, UserCarService>();
 builder.Services.AddScoped<IRequestService, RequestService>();
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<IRequestLogService, RequestLogService>();
+
 builder.Services.AddScoped<IUserAppService,UserAppService>();
 builder.Services.AddScoped<IUserCarAppService,UserCarAppService>();
 builder.Services.AddScoped<IRequestAppService,RequestAppService>();
 builder.Services.AddScoped<ICarAppService, CarAppService>();
-
+builder.Services.AddScoped<IRequestLogAppService, RequestLogAppService>();
 
 
 var app = builder.Build();

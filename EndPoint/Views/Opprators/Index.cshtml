@@ -2,6 +2,7 @@
 @using Domain.Core.App.Cars.Entity;
 @model List<Request>
 
+
 <hr />
 <div class="table-responsive">
     <table class="table table-striped table-hover table-bordered table-sm ">
@@ -28,8 +29,8 @@
                     <td>@request.PhoneNumber</td>
                     <td>@request.Address</td>
                     <td>
-                        <a class="btn btn-success" asp-controller="Opprators" asp-action="Approve" asp-route-id="@request.Id">Approve</a>
-                        <a class="btn btn-danger" asp-controller="Opprators" asp-action="Disapprove" asp-route-id="@request.Id">Disapprove</a>
+                        <a class="btn btn-success" action="post" asp-controller="Opprators" asp-action="Approve" asp-route-id="@request.Id">Approve</a>
+                        <a class="btn btn-danger" action="post" asp-controller="Opprators" asp-action="Disapprove" asp-route-id="@request.Id">Disapprove</a>
                     </td>
                 </tr>
             }

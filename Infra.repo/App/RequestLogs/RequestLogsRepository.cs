@@ -1,6 +1,8 @@
 ﻿using Domain.Core.App.RequestLogs.Data;
 using Domain.Core.App.Requests.Entity;
+using Domain.Core.App.Users.Entity;
 using Infra.DataBase;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,11 @@ namespace Infra.repo.App.RequestLogs
         {
             return _DBContext.requestLogs.FirstOrDefault(x => x.Id == id);
         }
+        public List<RequestLog> GetAllUsersCars(User user)
+        {
+            return _DBContext.requestLogs.Where(x => x.NationalCode == user.NationalCode).Include(x => x.Car).ToList();
+        }
+
         public bool Add(RequestLog requestLog)
         {
             _DBContext.requestLogs.Add(requestLog);

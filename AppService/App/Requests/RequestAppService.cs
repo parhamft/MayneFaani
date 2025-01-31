@@ -3,6 +3,7 @@ using Domain.Core.App.RequestLogs.Services;
 using Domain.Core.App.Requests.AppServices;
 using Domain.Core.App.Requests.Entity;
 using Domain.Core.App.Requests.Services;
+using Domain.Core.App.Users.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,10 @@ namespace AppService.App.Requests
             _requestService.CheckingTheDate(request);
             _requestService.AddRequest(request);
             return "Request Sent";
+        }
+        public List<Request> GetPastRequests(User user)
+        {
+            return _requestService.GetPastRequests(user);
         }
         public string ApproveRequests(int id)
         {

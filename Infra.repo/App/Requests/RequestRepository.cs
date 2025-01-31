@@ -1,6 +1,7 @@
 ﻿
 using Domain.Core.App.Requests.Data;
 using Domain.Core.App.Requests.Entity;
+using Domain.Core.App.Users.Entity;
 using Infra.DataBase;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,10 +27,17 @@ namespace Infra.repo.App.Requests
         {
             return _DBContext.Requests.Where(x => x.RequestDay != null ).Include(x => x.Car).OrderByDescending(x => x.RequestDay).LastOrDefault(x => x.Plate == Plate);
         }
+
+        public List<Request> GetAllUsersCars(User user)
+        {
+            return _DBContext.Requests.Where(x=>x.NationalCode==user.NationalCode).Include(x => x.Car).ToList();
+        }
+
         public List<Request> PendingRequests()
         {
             return _DBContext.Requests.Include(x=>x.Car).Where(x => x.RequestDay == null).ToList();
         }
+
         public Request Get(int id) 
         {
             return _DBContext.Requests.Include(x=>x.Car).FirstOrDefault(x=>x.Id==id);

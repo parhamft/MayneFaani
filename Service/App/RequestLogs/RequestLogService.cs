@@ -1,6 +1,7 @@
 ﻿using Domain.Core.App.RequestLogs.Data;
 using Domain.Core.App.RequestLogs.Services;
 using Domain.Core.App.Requests.Entity;
+using Domain.Core.App.Users.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,10 @@ namespace Service.App.RequestLogs
             };
             return requestLogsRepository.Add(reqlog);
              
+        }
+        public List<RequestLog> GetAllDisapprovedRequests(User user)
+        {
+            return requestLogsRepository.GetAllUsersCars(user);
         }
 
     }
