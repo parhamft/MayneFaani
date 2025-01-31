@@ -23,7 +23,7 @@ namespace Infra.repo.App.Cars
         public bool Delete(int id)
         {
             var car = _DBContext.Cars.FirstOrDefault(x => x.Id == id);
-            if (car != null) { return false; }
+            if (car == null) { return false; }
             _DBContext.Cars.Remove(car);
             _DBContext.SaveChanges();
             return true;

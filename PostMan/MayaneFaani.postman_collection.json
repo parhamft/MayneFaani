@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "0a28f7c6-2383-4ac5-9144-b004e11e272b",
+		"name": "MayaneFaani",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41619336"
+	},
+	"item": [
+		{
+			"name": "CarModel",
+			"item": [
+				{
+					"name": "GetAllCars",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "zU8cuQDa0mqEAI8BH7hRZFMjSZSrqJupDKJ5WVSSBGsYxkP8ofc5E2nWdv6bbY5DJBNCnubCwnc2ybG3Yq00JUzuoVkhMPUIhCFxva3DFmIHHox4DOewMmD1ag25MrtT",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/api/CarModel/GetAllCars",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"CarModel",
+								"GetAllCars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain;charset=UTF-8"
+							},
+							{
+								"key": "apikey",
+								"value": "zU8cuQDa0mqEAI8BH7hRZFMjSZSrqJupDKJ5WVSSBGsYxkP8ofc5E2nWdv6bbY5DJBNCnubCwnc2ybG3Yq00JUzuoVkhMPUIhCFxva3DFmIHHox4DOewMmD1ag25MrtT",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/api/CarModel/GetCarById?id=2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"CarModel",
+								"GetCarById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "apikey",
+								"value": "zU8cuQDa0mqEAI8BH7hRZFMjSZSrqJupDKJ5WVSSBGsYxkP8ofc5E2nWdv6bbY5DJBNCnubCwnc2ybG3Yq00JUzuoVkhMPUIhCFxva3DFmIHHox4DOewMmD1ag25MrtT",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"model\": \"nissan\",\n  \"company\": \"saipa\",\n  \"creationYear\": \"2020-12-20\"\n  \n\n  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7265/api/CarModel/AddCar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"CarModel",
+								"AddCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "apikey",
+								"value": "zU8cuQDa0mqEAI8BH7hRZFMjSZSrqJupDKJ5WVSSBGsYxkP8ofc5E2nWdv6bbY5DJBNCnubCwnc2ybG3Yq00JUzuoVkhMPUIhCFxva3DFmIHHox4DOewMmD1ag25MrtT",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"model\": \"pegeot2\",\n  \"company\": \"saipa\",\n  \"creationYear\": \"2021-12-20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7265/api/CarModel/UpdateCar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"CarModel",
+								"UpdateCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain;charset=UTF-8"
+							},
+							{
+								"key": "apikey",
+								"value": "zU8cuQDa0mqEAI8BH7hRZFMjSZSrqJupDKJ5WVSSBGsYxkP8ofc5E2nWdv6bbY5DJBNCnubCwnc2ybG3Yq00JUzuoVkhMPUIhCFxva3DFmIHHox4DOewMmD1ag25MrtT",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/api/CarModel/Delete?id=3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"CarModel",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Opprators",
+			"item": [
+				{
+					"name": "PendingRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7265/api/Opprators/PendingRequest",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Opprators",
+								"PendingRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain;charset=UTF-8"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/api/Opprators/Approve?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Opprators",
+								"Approve"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disapprove",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain;charset=UTF-8"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/api/Opprators/Dissaprove?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Opprators",
+								"Dissaprove"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Requests",
+			"item": [
+				{
+					"name": "SendRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"plate\": \"\",\n  \"requestDay\": null,\n  \"phoneNumber\": \"\",\n  \"nationalCode\": \"\",\n  \"carId\": 1,\n  \"car\": {\n    \"id\": 1,\n    \"model\": \"\",\n    \"company\": \"\",\n    \"creationYear\": \"\",\n    \"userCars\": [\n      {\n        \"id\": 1,\n        \"plate\": \"\",\n        \"carId\": 1,\n        \"car\": {\n          \"id\": 1,\n          \"model\": \"\",\n          \"company\": \"\",\n          \"creationYear\": \"\",\n          \"userCars\": null\n        },\n        \"userId\": 1,\n        \"user\": {\n          \"id\": 1,\n          \"phoneNumber\": \"\",\n          \"nationalCode\": \"\",\n          \"password\": \"\",\n          \"address\": \"\",\n          \"role\": 1,\n          \"userCars\": []\n        }\n      }\n    ]\n  },\n  \"address\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7265/api/Request/sendRequest",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Request",
+								"sendRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoggedInSendRequest\"",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain;charset=UTF-8"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/api/Request/LoggedInSendRequest?car=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Request",
+								"LoggedInSendRequest"
+							],
+							"query": [
+								{
+									"key": "car",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Requesthistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7265/api/Request/RequestHistory",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Request",
+								"RequestHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DissaprovedRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7265/api/Request/DissaprovedRequests",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"Request",
+								"DissaprovedRequests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserCars",
+			"item": [
+				{
+					"name": "AddCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"plate\": \"\",\n  \"carId\": 1,\n  \n  \"userId\": 1,\n  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7265/api/UserCars/AddCar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"UserCars",
+								"AddCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersCars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7265/api/UserCars/usersCars",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"api",
+								"UserCars",
+								"usersCars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain;charset=UTF-8"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7265/User/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7265",
+							"path": [
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

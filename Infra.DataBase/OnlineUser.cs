@@ -10,6 +10,5 @@ namespace Infra.DataBase
     public static class OnlineUser
     {
         public static User? CurrentUser{ get; set; }
-
     }
 }

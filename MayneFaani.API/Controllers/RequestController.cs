@@ -28,7 +28,7 @@ namespace MayneFaani.API.Controllers
             userCarAppServiceX = userCarAppService1;
             requestLogAppService = requestLog;
         }
-        [HttpPost("send Request")]
+        [HttpPost("sendRequest")]
         public void SendRequest(Request req)
         {
 
